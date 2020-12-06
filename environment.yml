@@ -1,0 +1,12 @@
+name: NoteFinderEnv
+dependencies:
+  - pyaudio
+  - numpy
+  - pylab
+  - matplotlib
+  - scipy
+  - seaborn as sns
+  - aubio
+  - pip
+pip:
+  - qiskit
