@@ -8,13 +8,17 @@ from qiskit.quantum_info import Statevector
 
 # import basic plot tools
 from qiskit.visualization import plot_histogram
-freq = 440
-notes = ['A', 'B', 'C', 'D', 'E', 'F', 'G']
 
-def findNoteFororacle(qc,freq, notes):
-    for n in notes:
-        if n['min'] < freq < n['max']:
-          qc.
+freq = 440
+notes = {'A': 110, 'B': 123.5, 'C': 65.41, 'D': 73.42, 'E': 82.41, 'F': 87.31, 'G': 98}
+#        000       001          010         011         100         101         111
+
+
+def findNoteFororacle(qc, freq, notes):
+    for index,n in enumerate(notes):
+        if (notes[n] - 2) < freq < (notes[n] + 2):
+            qc.cz()
+
 
 
 n = 4

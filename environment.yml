@@ -5,8 +5,6 @@ dependencies:
   - pylab
   - matplotlib
   - scipy
-  - seaborn as sns
-  - aubio
-  - pip
+  - seaborn
 pip:
   - qiskit
