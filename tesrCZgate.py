@@ -15,17 +15,26 @@ notes = {'A': 110, 'B': 123.5, 'C': 65.41, 'D': 73.42, 'E': 82.41, 'F': 87.31, '
 backend = Aer.get_backend('unitary_simulator')
 matplotlib.use('Qt5Agg')
 
-n = 3
-oracle_circuit = QuantumCircuit(n, name='Oracle')
-c = 0
-t = 2
-oracle_circuit.cz(0, 2).cz(2, 0)  # Oracle
-#oracle_circuit.cz(2, 1)  # Oracle
-# print(, t)
+n = 3   #les 3 qbits
+oracle_circuit = QuantumCircuit(n, name='Oracle') #n est nomé ORACLE
+c = 0  # qbit de control
+t = 2   # qbit de target 
 
-job = execute(oracle_circuit, backend)
-result = job.result()
-print(result.get_unitary(oracle_circuit))
-oracle_ex4 = oracle_circuit.to_gate()
+oracle_circuit.cz(c, t)  # Oracle 
+#oracle_circuit.cz(2, 1)  # Oracle
+print(c,t)  
+
+job = execute(oracle_circuit, backend)  #executer le resultat  
+result = job.result() # recupere la matrice 
+print(result.get_unitary(oracle_circuit)) # afficher la matrice
+oracle_ex4 = oracle_circuit.to_gate() # converti le circuit en porte  
 # print(oracle_ex4.to_matrix())
 # oracle_ex4.draw()
+
+
+
+
+# objectif passer tous les 1 à -1 
+
+
+

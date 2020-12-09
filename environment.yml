@@ -2,7 +2,6 @@ name: NoteFinderEnv
 dependencies:
   - pyaudio
   - numpy
-  - pylab
   - matplotlib
   - scipy
   - seaborn
